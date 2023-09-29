@@ -15,10 +15,10 @@ int main()
     int mx = INT_MIN;
     int j;
 
-    for (i, 0, n - k + 1)
+    fori(i, 0, n - k + 1)
     {
         int s = 0;
-        for (j, 0, i + k)
+        fori(j, 0, i + k)
         {
             s += a[j];
         }
