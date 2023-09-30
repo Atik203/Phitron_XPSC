@@ -14,9 +14,10 @@ int main()
 
     int s = 0, i = 0, j = 0;
     int mx = INT_MIN;
+
     while (j < n)
     {
-        s += a[i];
+        s += a[j];
         if (j >= k - 1)
         {
             mx = max(mx, s);
