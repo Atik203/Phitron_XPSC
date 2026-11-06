@@ -13,6 +13,7 @@ int main()
     cin >> s;
     int i = 0, j = 0, sum = 0;
     int mx = INT_MIN;
+
     while (j < n)
     {
         sum += a[j];

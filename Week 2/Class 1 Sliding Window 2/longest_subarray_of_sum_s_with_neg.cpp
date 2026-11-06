@@ -12,27 +12,28 @@ int main()
     int s;
     cin >> s;
 
-    map<int, int> mp;
+        map<int, int> mp;
 
-    int sum = 0;
-    for (int i = 0; i < n; i++)
-    {
-        sum += a[i];
-        if (sum == s)
-        {
-            cout << i + 1 << endl;
-        }
-        if (sum > s)
-        {
-            if (mp.find(sum - s) != mp.end())
-            {
-                cout << i - mp[sum - s] << endl;
+        int sum = 0;
+        int mx = 0;
+
+        for (int i = 0; i < N; i++) {
+            sum += A[i];
+
+            if (sum == K) {
+                mx = i + 1;
+            }
+
+            if (mp.find(sum - K) != mp.end()) {
+                mx = max(mx, i - mp[sum - K]);
+            }
+
+            if (mp.find(sum) == mp.end()) {
+                mp[sum] = i;
             }
         }
-        if (mp.find(sum) == mp.end())
-        {
-            mp[sum] = i;
-        }
-    }
+
+        cout<<mx<<endl;
+
     return 0;
 }
